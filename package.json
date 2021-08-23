@@ -1,0 +1,33 @@
+{
+  "name": "yidhra",
+  "version": "1.0.0",
+  "description": "a little js lib",
+  "packageManager": "yarn@3.0.1",
+  "main": "dist/cjs/index.js",
+  "module": "dist/esm/index.js",
+  "types": "dist/types/index.d.ts",
+  "typings": "dist/types/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "prebuild": "rimraf dist",
+    "build:esm": "cross-env BABEL_ENV=esm babel src --extensions .ts,.tsx -d dist/esm --source-maps",
+    "build:cjs": "cross-env BABEL_ENV=cjs babel src --extensions .ts,.tsx -d dist/cjs --source-maps",
+    "build:types": "tsc --emitDeclarationOnly --declaration --declarationDir dist/types",
+    "build": "yarn run build:esm & yarn run build:cjs & yarn run build:types",
+    "prepublish": "yarn run build",
+    "publish": "yarn npm publish"
+  },
+  "author": "elase.huang",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/cli": "^7.14.8",
+    "@babel/core": "^7.15.0",
+    "@babel/preset-env": "^7.15.0",
+    "@babel/preset-typescript": "^7.15.0",
+    "cross-env": "^7.0.3",
+    "rimraf": "^3.0.2",
+    "typescript": "^4.3.5"
+  }
+}

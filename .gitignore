@@ -14,3 +14,6 @@ yarn.lock
 # production
 node_modules
 /dist
+
+# jest
+coverage

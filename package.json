@@ -11,6 +11,7 @@
     "dist"
   ],
   "scripts": {
+    "test": "jest --coverage",
     "prebuild": "rimraf dist",
     "build:esm": "cross-env BABEL_ENV=esm babel src --extensions .ts,.tsx -d dist/esm --source-maps",
     "build:cjs": "cross-env BABEL_ENV=cjs babel src --extensions .ts,.tsx -d dist/cjs --source-maps",
@@ -26,8 +27,11 @@
     "@babel/core": "^7.15.0",
     "@babel/preset-env": "^7.15.0",
     "@babel/preset-typescript": "^7.15.0",
+    "@types/jest": "^27.0.1",
     "cross-env": "^7.0.3",
+    "jest": "^27.0.6",
     "rimraf": "^3.0.2",
+    "ts-jest": "^27.0.5",
     "typescript": "^4.3.5"
   }
 }
